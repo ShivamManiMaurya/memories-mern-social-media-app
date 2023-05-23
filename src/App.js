@@ -1,10 +1,18 @@
 import "./App.css";
-// import {Container, AppBar, Typography, Grow, Grid} from '@ma'
 import memories from "./images/memories.png";
 import Posts from "./components/Posts/Posts";
 import Form from "./components/Form/Form";
+import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { getPosts } from "./actions/posts";
 
 function App() {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getPosts());
+    }, [dispatch]);
+
     return (
         <div className="App flex flex-col items-center justify-center w-screen">
             <div className="w-[1000px]">
@@ -18,11 +26,11 @@ function App() {
                         alt="memories"
                     />
                 </nav>
-                <div className="grid grid-col-2 grid-flow-col justify-between bg-zinc-600">
+                <div className="grid grid-col-2 grid-flow-col justify-between ">
                     <div className="bg-red-500">
                         <Posts />
                     </div>
-                    <div className="bg-green-500">
+                    <div className="">
                         <Form />
                     </div>
                 </div>
