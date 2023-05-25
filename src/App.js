@@ -15,8 +15,8 @@ function App() {
 
     return (
         <div className="App flex flex-col items-center justify-center w-screen">
-            <div className="w-[1000px]">
-                <nav className="w-full flex justify-center items-center rounded-lg my-4 border-2 border-zinc-300 shadow-md shadow-zinc-400">
+            <div className="lg:w-[1000px] lg:mx-0 mx-2">
+                <nav className="md:w-full flex justify-center items-center rounded-lg my-4 border-2 border-zinc-300 shadow-md shadow-zinc-400">
                     <h2 className=" text-[#3797d7] text-4xl font-normal">
                         Memories
                     </h2>
@@ -26,11 +26,11 @@ function App() {
                         alt="memories"
                     />
                 </nav>
-                <div className="grid grid-col-2 grid-flow-col justify-between ">
-                    <div className="bg-red-500">
+                <div className="md:grid grid-col-2 grid-flow-col md:justify-center lg:justify-between ">
+                    <div className=" pb-4 lg:col-span-12 col-span-0 flex items-center justify-center lg:block">
                         <Posts />
                     </div>
-                    <div className="">
+                    <div className=" pb-4 flex items-center justify-center md:block">
                         <Form />
                     </div>
                 </div>

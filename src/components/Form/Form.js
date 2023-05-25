@@ -16,7 +16,7 @@ function Form() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        console.log("postData = ", postData);
         dispatch(createPost(postData));
     };
 
@@ -35,7 +35,7 @@ function Form() {
                     <div className="mb-2 border-2 border-zinc-400 rounded-sm">
                         <input
                             className="w-full h-9 pl-2"
-                            placeholder="Creator"
+                            placeholder="Creator Name"
                             type="text"
                             name="creator"
                             value={postData.creator}

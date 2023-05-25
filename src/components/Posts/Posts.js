@@ -7,11 +7,13 @@ function Posts() {
 
     console.log(posts);
 
-    return (
-        <div>
-            <h1>Posts</h1>
-            <Post />
-            <Post />
+    return !posts.length ? (
+        <h1>Loading...</h1>
+    ) : (
+        <div className=" px-5 grid lg:grid-cols-2 grid-cols-1 gap-y-6">
+            {posts.map((post) => (
+                <Post key={post._id} post={post} />
+            ))}
         </div>
     );
 }
