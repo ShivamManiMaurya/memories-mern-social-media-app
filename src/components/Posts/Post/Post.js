@@ -6,7 +6,7 @@ import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 
 function Post({ post }) {
     return (
-        <div className="w-60 h-fit bg-white rounded-lg text-left shadow-lg shadow-zinc-400 border border-zinc-300">
+        <div className="w-60 h-fit bg-white rounded-lg text-left shadow-lg shadow-zinc-700">
             <div className="relative">
                 <img
                     className="rounded-t-lg object-cover"
@@ -19,9 +19,16 @@ function Post({ post }) {
                         {moment(post.createdAt).fromNow()}
                     </p>
                 </div>
-                <div className="absolute top-0 right-0 p-2 pr-4">
-                    <button onClick={() => {}}>
-                        <MoreHorizIcon sx={{ color: "white" }} />
+                <div className="absolute top-0 right-0 p-2 pr-2">
+                    <button className="" onClick={() => {}}>
+                        <MoreHorizIcon
+                            sx={{
+                                color: "white",
+                                fontSize: "40px",
+                                height: "24px",
+                            }}
+                            className="hover:text-zinc-900 hover:bg-slate-200/40 active:bg-slate-50/30 rounded-sm px-2"
+                        />
                     </button>
                 </div>
             </div>

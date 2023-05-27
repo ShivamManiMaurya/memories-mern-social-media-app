@@ -23,7 +23,7 @@ function Form() {
     const clear = () => {};
 
     return (
-        <div className="mr-4 shadow-lg shadow-zinc-400 py-2 px-4 rounded-sm border-2 border-zinc-100">
+        <div className=" bg-white mr-4 shadow-lg shadow-zinc-700 py-2 px-4 rounded-sm">
             <form
                 action=""
                 noValidate
