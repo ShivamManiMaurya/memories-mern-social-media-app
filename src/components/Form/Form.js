@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FileBase from "react-file-base64";
-import { useDispatch } from "react-redux";
-import { createPost } from "../../actions/posts";
+import { useDispatch, useSelector } from "react-redux";
+import { createPost, updatePost } from "../../actions/posts";
 
-function Form() {
+function Form({ currentId, setCurrentId }) {
     const [postData, setPostData] = useState({
         creator: "",
         title: "",
@@ -12,15 +12,40 @@ function Form() {
         selectedFile: "",
     });
 
+    const post = useSelector((state) =>
+        currentId ? state.posts.find((p) => p._id === currentId) : null
+    );
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (post) {
+            setPostData(post);
+        }
+    }, [post]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("postData = ", postData);
-        dispatch(createPost(postData));
+        // console.log("postData = ", postData);
+
+        if (currentId) {
+            dispatch(updatePost(currentId, postData));
+        } else {
+            dispatch(createPost(postData));
+        }
+
+        clear();
     };
 
-    const clear = () => {};
+    const clear = () => {
+        setCurrentId(null);
+        setPostData({
+            creator: "",
+            title: "",
+            message: "",
+            tags: "",
+            selectedFile: "",
+        });
+    };
 
     return (
         <div className=" bg-white mr-4 shadow-lg shadow-zinc-700 py-2 px-4 rounded-sm">
@@ -30,7 +55,9 @@ function Form() {
                 autoComplete="off"
                 onSubmit={handleSubmit}
             >
-                <h6 className="py-2 font-bold">Creating a Memory</h6>
+                <h6 className="py-2 font-bold">
+                    {currentId ? "Editing" : "Creating"} a Memory
+                </h6>
                 <div>
                     <div className="mb-2 border-2 border-zinc-400 rounded-sm">
                         <input
@@ -103,13 +130,13 @@ function Form() {
                     />
                 </div>
                 <button
-                    className="bg-blue-500 w-full py-2 my-2 rounded-sm text-white font-bold shadow-md shadow-zinc-300"
+                    className="bg-blue-600 hover:rounded-2xl active:bg-blue-700 active:rounded-3xl w-full py-2 my-2 rounded-sm text-white font-bold shadow-md shadow-zinc-300"
                     type="submit"
                 >
                     Submit
                 </button>
                 <button
-                    className=" bg-red-500 w-full py-2 my-2 rounded-sm text-white font-bold shadow-md shadow-zinc-300"
+                    className=" bg-red-500 hover:rounded-2xl active:rounded-3xl active:bg-red-600 w-full py-2 my-2 rounded-sm text-white font-bold shadow-md shadow-zinc-300"
                     type="submit"
                     onClick={clear}
                 >

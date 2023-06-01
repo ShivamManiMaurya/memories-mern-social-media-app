@@ -4,7 +4,7 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 
-function Post({ post }) {
+function Post({ post, setCurrentId }) {
     return (
         <div className="w-60 h-fit bg-white rounded-lg text-left shadow-lg shadow-zinc-700">
             <div className="relative">
@@ -20,7 +20,7 @@ function Post({ post }) {
                     </p>
                 </div>
                 <div className="absolute top-0 right-0 p-2 pr-2">
-                    <button className="" onClick={() => {}}>
+                    <button className="" onClick={() => setCurrentId(post._id)}>
                         <MoreHorizIcon
                             sx={{
                                 color: "white",
