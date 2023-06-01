@@ -3,8 +3,12 @@ import moment from "moment";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
+import { useDispatch } from "react-redux";
+import { deletePost, likePost } from "../../../actions/posts";
 
 function Post({ post, setCurrentId }) {
+    const dispatch = useDispatch();
+
     return (
         <div className="w-60 h-fit bg-white rounded-lg text-left shadow-lg shadow-zinc-700">
             <div className="relative">
@@ -45,13 +49,13 @@ function Post({ post, setCurrentId }) {
             <div className="flex justify-between items-center p-2">
                 <button
                     className=" text-blue-600 pl-2 flex items-center gap-1 active:text-blue-800"
-                    onClick={() => {}}
+                    onClick={() => dispatch(likePost(post._id))}
                 >
                     <ThumbUpAltIcon fontSize="small" /> Like {post.likeCount}
                 </button>
                 <button
                     className=" text-blue-600 pr-2 flex items-center gap-0 active:text-red-800"
-                    onClick={() => {}}
+                    onClick={() => dispatch(deletePost(post._id))}
                 >
                     <DeleteIcon fontSize="small" /> Delete
                 </button>
