@@ -5,8 +5,6 @@ import { useSelector } from "react-redux";
 function Posts({ setCurrentId }) {
     const posts = useSelector((state) => state.posts);
 
-    console.log(posts);
-
     return !posts.length ? (
         <h1>Loading...</h1>
     ) : (

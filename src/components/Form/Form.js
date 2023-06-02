@@ -4,13 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { createPost, updatePost } from "../../actions/posts";
 
 function Form({ currentId, setCurrentId }) {
-    const [postData, setPostData] = useState({
+    const postDataInitialState = {
         creator: "",
         title: "",
         message: "",
         tags: "",
         selectedFile: "",
-    });
+    };
+
+    const [postData, setPostData] = useState(postDataInitialState);
 
     const post = useSelector((state) =>
         currentId ? state.posts.find((p) => p._id === currentId) : null
@@ -25,26 +27,22 @@ function Form({ currentId, setCurrentId }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // console.log("postData = ", postData);
 
         if (currentId) {
             dispatch(updatePost(currentId, postData));
-        } else {
+        } else if (
+            postData.creator !== "" &&
+            postData.selectedFile !== "" &&
+            postData.title !== ""
+        ) {
             dispatch(createPost(postData));
         }
-
         clear();
     };
 
     const clear = () => {
         setCurrentId(null);
-        setPostData({
-            creator: "",
-            title: "",
-            message: "",
-            tags: "",
-            selectedFile: "",
-        });
+        setPostData(postDataInitialState);
     };
 
     return (
@@ -137,7 +135,7 @@ function Form({ currentId, setCurrentId }) {
                 </button>
                 <button
                     className=" bg-red-500 hover:rounded-2xl active:rounded-3xl active:bg-red-600 w-full py-2 my-2 rounded-sm text-white font-bold shadow-md shadow-zinc-300"
-                    type="submit"
+                    type="button"
                     onClick={clear}
                 >
                     Clear
