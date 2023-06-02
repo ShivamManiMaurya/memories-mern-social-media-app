@@ -10,7 +10,7 @@ function Post({ post, setCurrentId }) {
     const dispatch = useDispatch();
 
     return (
-        <div className="w-60 h-fit bg-white rounded-lg text-left shadow-lg shadow-zinc-700">
+        <div className="w-fit md:w-60 h-fit bg-white rounded-lg text-left shadow-lg shadow-zinc-700">
             <div className="relative">
                 <img
                     className="rounded-t-lg object-cover"

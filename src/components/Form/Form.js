@@ -48,7 +48,7 @@ function Form({ currentId, setCurrentId }) {
     };
 
     return (
-        <div className=" bg-white mr-4 shadow-lg shadow-zinc-700 py-2 px-4 rounded-sm">
+        <div className=" w-fit bg-white mr-4 shadow-lg shadow-zinc-700 py-2 px-4 rounded-sm">
             <form
                 action=""
                 noValidate
@@ -114,7 +114,7 @@ function Form({ currentId, setCurrentId }) {
                             onChange={(e) =>
                                 setPostData({
                                     ...postData,
-                                    tags: e.target.value,
+                                    tags: e.target.value.split(","),
                                 })
                             }
                         />

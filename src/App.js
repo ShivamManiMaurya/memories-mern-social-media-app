@@ -29,11 +29,11 @@ function App() {
                         alt="memories"
                     />
                 </nav>
-                <div className=" md:grid grid-col-2 grid-flow-col md:justify-center lg:justify-between ">
+                <div className=" flex flex-col-reverse md:grid md:grid-col-2 md:grid-flow-col  md:justify-center lg:justify-between ">
                     <div className=" pb-4 lg:col-span-12 col-span-0 flex items-center justify-center lg:block">
                         <Posts setCurrentId={setCurrentId} />
                     </div>
-                    <div className=" pb-4 flex items-center justify-center md:block">
+                    <div className="w-auto ml-4 md:ml-0 pb-4 flex items-center justify-center md:block">
                         <Form
                             currentId={currentId}
                             setCurrentId={setCurrentId}
