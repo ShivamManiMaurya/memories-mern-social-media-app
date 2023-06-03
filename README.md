@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Memories Social-Media MERN App (FrontEnd).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The App is called "Memories" and it is a simple social media app that allows users to post interesting events that happened in their lives.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+-   [Overview](#overview)
+    -   [The Theme](#the-theme)
+    -   [Screenshot](#screenshot)
+    -   [Links](#links)
+-   [My process](#my-process)
+    -   [Built with](#built-with)
+    -   [What I learned](#what-i-learned)
+    -   [Useful resources](#useful-resources)
+-   [Author](#author)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### The Theme
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Users should be able to:
 
-### `npm test`
+-   View the posts that are posted and it is stored on the backend.
+-   Create, Update, Delete and Read the Posts.
+-   Like the posts and able to edit the post.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshot
 
-### `npm run build`
+![](./screenshot.jpg)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Desktop View                                              |
+| --------------------------------------------------------- |
+| ![Desktop](./src/images/screenshots/memories_Desktop.png) |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Tablet View                                              | Mobile View                                             |
+| -------------------------------------------------------- | ------------------------------------------------------- |
+| ![Tablet](./src/images/screenshots/memories_tabView.png) | ![Mobile](./src/images/screenshots/memories_mobile.png) |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Links
 
-### `npm run eject`
+-   [Github Solution](https://github.com/ShivamManiMaurya/memories-mern-social-media-app)
+-   [Live Site](https://memories-proj-app-mern.netlify.app/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## My process
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Built with
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-   HTML5
+-   CSS custom properties
+-   Flexbox
+-   [TailwindCSS](https://tailwindcss.com/) - For styling
+-   JavaScript
+-   [React](https://reactjs.org/) - JS library
+-   [MongoDB](https://cloud.mongodb.com/) - For database
+-   NodeJs - For backend
+-   ExpressJs - For backend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### What I learned
 
-## Learn More
+-   Get familiar with MongoDB and mongoose
+-   Get familiar with routes, Api
+-   Get familiar with backend technologies like NodeJs and ExpressJs
+-   Get more familiar with Redux
+-   Get more familiar with Async/Await
+-   Get more familiar with Try-Catch block
+-   Get more familiar with tailwindCSS
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Useful resources
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-   [JavaScript Mastery](https://www.youtube.com/@javascriptmastery) - A very special thanks to JavaScript Mastery.
+-   [Akshay Saini](https://www.youtube.com/@akshaymarch7) - Akshay Saini bhaiya helped me in understanding different Javascript concepts.
 
-### Code Splitting
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   Website - [Shivam Maurya](https://shivammanimaurya.github.io/my_portfolio_website/)
+-   GitHub Page - [Shivam Maurya GitHub](https://github.com/ShivamManiMaurya)
+-   Linkedin - [@shivammanimaurya](https://www.linkedin.com/in/shivammanimaurya)
